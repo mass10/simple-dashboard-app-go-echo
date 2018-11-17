@@ -1,0 +1,10 @@
+version: "3"
+services:
+  simple-server:
+    build: simple-server-docker-image
+    image: simple-server-docker-image
+    ports:
+      - "8080:8080"
+    # command: /usr/bin/find /my/app -ls
+    volumes:
+      - /tmp:/608b9bdc-ba4c-4e7b-af0d-cb07df454f01:rw
