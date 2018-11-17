@@ -5,6 +5,6 @@ services:
     image: simple-server-docker-image
     ports:
       - "8080:8080"
-    # command: /usr/bin/find /my/app -ls
+    # command: /usr/bin/find / -type d -name labstack
     volumes:
       - /tmp:/608b9bdc-ba4c-4e7b-af0d-cb07df454f01:rw
