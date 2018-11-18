@@ -21,7 +21,7 @@ ENV APP_ROOT /my/app
 
 WORKDIR $APP_ROOT
 
-EXPOSE 8080 8080
+# EXPOSE 8080 8080
 
 CMD /my/app/go1.11.2.linux-amd64/bin/go run main.go
 
