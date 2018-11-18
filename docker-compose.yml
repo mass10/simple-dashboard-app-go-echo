@@ -1,10 +1,12 @@
 version: "3"
 services:
-  simple-server:
+  main:
     build: simple-server-docker-image
     image: simple-server-docker-image
     ports:
-      - "8080:8080"
+      - "8081:8081"
     # command: /usr/bin/find / -type d -name labstack
+    # command: /bin/ls -lF --full-time /my/app/go1.11.2.linux-amd64/src/
+    # command: "/usr/bin/find / -type f -ls"
     volumes:
       - /tmp:/608b9bdc-ba4c-4e7b-af0d-cb07df454f01:rw

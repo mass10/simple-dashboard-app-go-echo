@@ -1,4 +1,4 @@
-sudo docker-compose build
+# sudo docker-compose build
 # sudo docker-compose rm --force
-sudo docker-compose up
+sudo docker-compose up --build
 
