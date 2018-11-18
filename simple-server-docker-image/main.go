@@ -22,12 +22,17 @@ func make_md5(s string) string {
 
 func default_handler(ctx echo.Context) error {
 
-	t, _ := template.ParseFiles("templates/index.html")
-	content := make(map[string]string)
-	content["url"] = "https://yukan-club.xyz/activate/08eheh392h2e9y32jhw29eyhas821h3382th"
-	content["you"] = "オバマ"
-	buffer := new(bytes.Buffer)
-	t.Execute(buffer, content)
+	t, err := template.ParseFiles("templates/index.html")
+	if err != nil {
+		fmt.Printf("[ERROR] テンプレートファイルを開けません。理由: %v\n", err)
+		panic("")
+	}
+	fields := make(map[string]string)
+	fields["url"] = "https://yukan-club.xyz/activate/08eheh392h2e9y32jhw29eyhas821h3382th"
+	fields["you"] = "オバマ"
+	fields["undefined1"] = ""
+	var buffer bytes.Buffer
+	t.Execute(&buffer, fields)
 	return ctx.HTML(http.StatusOK, string(buffer.Bytes()))
 }
 
@@ -132,5 +137,5 @@ func main() {
 	e.GET("/dashboard/:key", dashboard_handler)
 	e.POST("/dashboard/:key", dashboard_handler_post)
 	// listenning
-	e.Logger.Fatal(e.Start(":8081"))
+	e.Logger.Fatal(e.Start(":8080"))
 }
