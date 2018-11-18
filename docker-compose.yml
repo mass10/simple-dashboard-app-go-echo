@@ -4,7 +4,7 @@ services:
     build: simple-server-docker-image
     image: simple-server-docker-image
     ports:
-      - "8081:8081"
+      - "8080:8080"
     # command: /usr/bin/find / -type d -name labstack
     # command: /bin/ls -lF --full-time /my/app/go1.11.2.linux-amd64/src/
     # command: "/usr/bin/find / -type f -ls"
