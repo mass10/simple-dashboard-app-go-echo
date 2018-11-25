@@ -1,3 +1,4 @@
 go1.11.2.linux-amd64
 go1.11.2.linux-amd64.tar.gz
 data
+go.sum
